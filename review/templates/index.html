@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style type="text/css">
+        #content {
+         width: 500px; /* Ширина слоя */
+         margin: 0 auto 50px; /* Выравнивание по центру */
+        }
+        #footer {
+         position: fixed; /* Фиксированное положение */
+         left: 0; bottom: 0; /* Левый нижний угол */
+         padding: 10px; /* Поля вокруг текста */
+         background: #000000; /* Цвет фона */
+         color: #fff; /* Цвет текста */
+         width: 100%; /* Ширина слоя */
+        }
+       </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Классификация отзывов</title>
+</head>
+<body>
+    <h1>Напишите отзыв на фильм на английском языке</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="input_text" required>
+        <button type="submit">Отправить</button>
+    </form>
+
+    {% if label and rating %}
+        <h2>Результаты обработки:</h2>
+        <p>Метка: {{ label }}</p>
+        <p>Рейтинг(от 1 до 10): {{ rating }}</p>
+    {% endif %}
+
+    <div id="footer">
+        &copy; Герасимов Степан
+    </div>
+</body>
+</html>
