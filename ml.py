@@ -65,7 +65,7 @@ y_test_labels = test_data['label'].to_numpy()
 y_test_ratings = test_data['rating'].to_numpy()
 
 
-classifier = LogisticRegression(max_iter=200)
+classifier = LogisticRegression(solver='liblinear', C=1.7)
 classifier.fit(X_train_all, y_train_labels)
 dump(classifier, 'classifier_label.joblib')
 
