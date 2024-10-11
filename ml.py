@@ -24,7 +24,6 @@ def get_vector(text, model):
 train_data = pd.read_csv('data.csv')
 
 """
-# если изменить путь, то можно создать csv с тестовым датасетом
 tokenized_sentences = [word_tokenize(sentence.lower()) for sentence in train_data['review']]
 
 # Обучение модели Word2Vec
